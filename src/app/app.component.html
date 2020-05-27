@@ -1,0 +1,25 @@
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
+
+<ion-app>
+    <ion-menu contentId="content1" side="start">
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+          <ion-list>
+              <ion-item>Home</ion-item>
+              <ion-item>Consulta</ion-item>
+              <ion-item>Mantenimiento</ion-item>
+              <ion-item>Centrales</ion-item>
+              <ion-item>Bitacora</ion-item>
+              <ion-item>Archivero</ion-item>
+              <ion-item>Almacen</ion-item>
+            </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="content1" main></ion-router-outlet>
+  </ion-app>
