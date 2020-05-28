@@ -1,19 +1,29 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title><img src="assets/images/logo-ca2.png" style="width:60px"></ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-title><img src="assets/images/logo-ca2.png" style="width:60px"></ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <img class="icon" src="assets/images/logo-ca2.png" alt="">
-<ion-item>
-  <ion-label position="floating">Correo electronico</ion-label>
-  <ion-input type="text" name="email"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="floating">Contraseña</ion-label>
-  <ion-input type="password" name="password"></ion-input>
-</ion-item>
-<ion-button expand="block" outline>Iniciar sesion</ion-button>
+    <img class="icon" src="assets/images/logo-ca2.png" alt="">
+    <br>
+    <br>
+
+    <ion-item>
+        <ion-label>
+            <ion-icon name="person-outline"></ion-icon>
+        </ion-label>
+        <ion-input placeholder="Usuario" value="{{usuario}}" [(ngModel)]="usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>
+            <ion-icon name="key-outline"></ion-icon>
+        </ion-label>
+        <ion-input placeholder="Contraseña" id="contraseña" type="password" value="{{password}}" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+
+    <ion-button expand="block" outline>Iniciar sesion</ion-button>
 
 </ion-content>
