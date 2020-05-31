@@ -9,5 +9,11 @@
 </ion-header>
 
 <ion-content>
+    <ion-button (click)="hacerFoto()">Tomar Foto</ion-button>
+    <ion-img src]="foto" *ngIf="foto"></ion-img>
+    <ion-input [(ngModel)]='informacionImagen'></ion-input>
+    <ion-button (click)="guardarImg()">Guardar Foto</ion-button>
+    <ion-button (click)='obtenerImg()'>Mostrar Foto</ion-button>
 
+    <ion-img id="img"></ion-img>
 </ion-content>
