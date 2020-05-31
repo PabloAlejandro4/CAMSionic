@@ -11,13 +11,22 @@
         </ion-header>
         <ion-content>
             <ion-list>
-                <ion-item>Home</ion-item>
-                <ion-item>Consulta</ion-item>
-                <ion-item>Mantenimiento</ion-item>
-                <ion-item>Centrales</ion-item>
-                <ion-item>Bitacora</ion-item>
-                <ion-item>Archivero</ion-item>
-                <ion-item>Almacen</ion-item>
+                <ion-item routerLink='/mantenimiento'>Mantenimiento</ion-item>
+                <ion-item routerLink='/correctivos'>Correctivos</ion-item>
+                <ion-item routerLink='/almacen'>Almacen</ion-item>
+                <ion-item routerLink='/administrativo'>Administrativo</ion-item>
+                <ion-item routerLink='/calendario'>Calendario</ion-item>
+                <ion-item routerLink='/configuracion'>Configuracion</ion-item>
+                <ion-item routerLink='/perfil'>Perfil</ion-item>
+                <ion-item routerLink='/centrales'>Centrales</ion-item>
+                <ion-item routerLink='/usuarios'>Usuarios</ion-item>
+                <ion-item routerLink='/actores'>Actores, Actividades y Tareas</ion-item>
+                <ion-item routerLink='/archivo'>Archivo Muerto</ion-item>
+                <ion-item routerLink='/tutoriales'>Tutoriales</ion-item>
+                <ion-item (click)='cerrarSesion()'>Cerrar Sesion</ion-item>
+
+
+
             </ion-list>
         </ion-content>
     </ion-menu>
