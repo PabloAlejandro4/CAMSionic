@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar color="tertiary">
+    <ion-toolbar color="primary">
         <ion-buttons slot="start">
             <ion-back-button default-href="home"></ion-back-button>
         </ion-buttons>
@@ -9,11 +9,12 @@
 </ion-header>
 
 <ion-content>
-    <ion-button (click)="hacerFoto()">Tomar Foto</ion-button>
-    <ion-img src]="foto" *ngIf="foto"></ion-img>
-    <ion-input [(ngModel)]='informacionImagen'></ion-input>
-    <ion-button (click)="guardarImg()">Guardar Foto</ion-button>
-    <ion-button (click)='obtenerImg()'>Mostrar Foto</ion-button>
-
-    <ion-img id="img"></ion-img>
+    <form action="" enctype="multipart/form-data">
+        <ion-button (click)="hacerFoto()">Tomar Foto</ion-button>
+        <ion-img [src]="foto" *ngIf="foto"></ion-img>
+        <ion-input [(ngModel)]='informacionImagen' name="w"></ion-input>
+        <ion-button (click)="guardarFoto()">Guardar Foto</ion-button>
+        <ion-button (click)='obtenerImg()'>Mostrar Foto</ion-button>
+    </form>
+    <ion-img src="http://localhost:3000/imagenes/out.jpg"></ion-img>
 </ion-content>

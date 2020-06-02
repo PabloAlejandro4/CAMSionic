@@ -3,6 +3,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 import { storage, initializeApp } from 'firebase';
 import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-correctivos',
@@ -12,8 +14,9 @@ import { environment } from 'src/environments/environment';
 export class CorrectivosPage implements OnInit {
  foto: any;
  informacionImagen: any;
-  constructor(private camera: Camera) { 
+  constructor(private camera: Camera,private httpClient: HttpClient) { 
     initializeApp(environment.firebase);
+
   }
 
   async hacerFoto() {
@@ -24,22 +27,54 @@ export class CorrectivosPage implements OnInit {
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true
     }
-
     const result = await this.camera.getPicture(options).then((imageData) => {
       this.foto = 'data:image/jpeg;base64,' + imageData;
       this.informacionImagen = imageData;
     }, (err) => {
       console.log(err);
     });
-    
   }
   guardarImg(){
     /*console.log(foto);
     this.imagenesService.guardarFoto(foto);
     this.imagenesService.obtenerFotos();*/
-    const pictures = storage().ref('pictures/CAMS');
+    const pictures = storage().ref('pictures/CAMS/');
     pictures.putString(this.foto, 'data_url');
     let urlI = pictures.getDownloadURL();
+
+}
+
+guardarFoto(){
+  return this.httpClient.post('http://192.168.1.71:3000/uploadImg', {
+  sampleFile: this.foto
+}).subscribe(
+      data => {
+        console.log(data);
+
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Exito' + data,
+          showConfirmButton: true,          
+        });
+        //this.router.navigate(['tabs', 'tab1' ]);
+
+      },
+      (err) => {
+        console.log(err);
+
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Error',
+          text: err.error,
+          showConfirmButton: true         
+        });
+
+      }
+
+
+    );
 }
 
 obtenerImg(){

@@ -49276,7 +49276,7 @@ module.exports = firebase;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar color=\"tertiary\">\r\n        <ion-buttons slot=\"start\">\r\n            <ion-back-button default-href=\"home\"></ion-back-button>\r\n        </ion-buttons>\r\n        <ion-title>Correctivos</ion-title>\r\n\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <ion-button (click)=\"hacerFoto()\">Tomar Foto</ion-button>\r\n    <img [src]=\"foto\" *ngIf=\"foto\" />\r\n    <ion-input [(ngModel)]='informacionImagen'></ion-input>\r\n    <ion-button (click)=\"guardarImg()\">Guardar Foto</ion-button>\r\n    <ion-button (click)='obtenerImg()'>Mostrar Foto</ion-button>\r\n\r\n    <ion-img id=\"img\"></ion-img>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar color=\"primary\">\r\n        <ion-buttons slot=\"start\">\r\n            <ion-back-button default-href=\"home\"></ion-back-button>\r\n        </ion-buttons>\r\n        <ion-title>Correctivos</ion-title>\r\n\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <form action=\"\" enctype=\"multipart/form-data\">\r\n        <ion-button (click)=\"hacerFoto()\">Tomar Foto</ion-button>\r\n        <ion-img [src]=\"foto\" *ngIf=\"foto\"></ion-img>\r\n        <ion-input [(ngModel)]='informacionImagen' name=\"w\"></ion-input>\r\n        <ion-button (click)=\"guardarFoto(foto)\">Guardar Foto</ion-button>\r\n        <ion-button (click)='obtenerImg()'>Mostrar Foto</ion-button>\r\n    </form>\r\n    <ion-img id=\"img\"></ion-img>\r\n</ion-content>");
 
 /***/ }),
 
@@ -49388,14 +49388,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
 /* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_6__);
+
+
 
 
 
 
 
 let CorrectivosPage = class CorrectivosPage {
-    constructor(camera) {
+    constructor(camera, httpClient) {
         this.camera = camera;
+        this.httpClient = httpClient;
         Object(firebase__WEBPACK_IMPORTED_MODULE_3__["initializeApp"])(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].firebase);
     }
     hacerFoto() {
@@ -49418,9 +49424,32 @@ let CorrectivosPage = class CorrectivosPage {
         /*console.log(foto);
         this.imagenesService.guardarFoto(foto);
         this.imagenesService.obtenerFotos();*/
-        const pictures = Object(firebase__WEBPACK_IMPORTED_MODULE_3__["storage"])().ref('pictures/CAMS');
+        const pictures = Object(firebase__WEBPACK_IMPORTED_MODULE_3__["storage"])().ref('pictures/CAMS/');
         pictures.putString(this.foto, 'data_url');
         let urlI = pictures.getDownloadURL();
+    }
+    guardarFoto() {
+        return this.httpClient.post('http://192.168.1.71:3000/uploadImg', {
+            sampleFile: this.foto
+        }).subscribe(data => {
+            console.log(data);
+            sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Exito' + data,
+                showConfirmButton: true,
+            });
+            //this.router.navigate(['tabs', 'tab1' ]);
+        }, (err) => {
+            console.log(err);
+            sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Error',
+                text: err.error,
+                showConfirmButton: true
+            });
+        });
     }
     obtenerImg() {
         console.log('tomando...');
@@ -49438,7 +49467,8 @@ let CorrectivosPage = class CorrectivosPage {
     }
 };
 CorrectivosPage.ctorParameters = () => [
-    { type: _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_2__["Camera"] }
+    { type: _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_2__["Camera"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] }
 ];
 CorrectivosPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
