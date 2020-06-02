@@ -15,6 +15,67 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./componentes/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'mantenimiento',
+    loadChildren: () => import('./mantenimiento/mantenimiento.module').then( m => m.MantenimientoPageModule)
+  },
+  {
+    path: 'mantenimiento',
+    loadChildren: () => import('./mantenimiento/mantenimiento.module').then( m => m.MantenimientoPageModule)
+  },
+  {
+    path: 'correctivos',
+    loadChildren: () => import('./componentes/correctivos/correctivos.module').then( m => m.CorrectivosPageModule)
+  },
+  {
+    path: 'almacen',
+    loadChildren: () => import('./componentes/almacen/almacen.module').then( m => m.AlmacenPageModule)
+  },
+  {
+    path: 'administrativo',
+    loadChildren: () => import('./componentes/administrativo/administrativo.module').then( m => m.AdministrativoPageModule)
+  },
+  {
+    path: 'calendario',
+    loadChildren: () => import('./componentes/calendario/calendario.module').then( m => m.CalendarioPageModule)
+  },
+  {
+    path: 'configuracion',
+    loadChildren: () => import('./componentes/configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./componentes/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'centrales',
+    loadChildren: () => import('./componentes/centrales/centrales.module').then( m => m.CentralesPageModule)
+  },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./componentes/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+  },
+  {
+    path: 'actores',
+    loadChildren: () => import('./componentes/actores/actores.module').then( m => m.ActoresPageModule)
+  },
+  {
+    path: 'archivo',
+    loadChildren: () => import('./componentes/archivo/archivo.module').then( m => m.ArchivoPageModule)
+  },
+  {
+    path: 'tutoriales',
+    loadChildren: () => import('./componentes/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
+  },  {
+    path: 'registro',
+    loadChildren: () => import('./componentes/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'recuperar',
+    loadChildren: () => import('./componentes/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+  }
+
+
 ];
 
 @NgModule({
