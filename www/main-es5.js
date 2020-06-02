@@ -221,7 +221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }, {
       path: '',
-      redirectTo: 'home',
+      redirectTo: 'login',
       pathMatch: 'full'
     }, {
       path: 'login',
@@ -375,6 +375,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /*! ./componentes/tutoriales/tutoriales.module */
         "./src/app/componentes/tutoriales/tutoriales.module.ts")).then(function (m) {
           return m.TutorialesPageModule;
+        });
+      }
+    }, {
+      path: 'registro',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | componentes-registro-registro-module */
+        "componentes-registro-registro-module").then(__webpack_require__.bind(null,
+        /*! ./componentes/registro/registro.module */
+        "./src/app/componentes/registro/registro.module.ts")).then(function (m) {
+          return m.RegistroPageModule;
+        });
+      }
+    }, {
+      path: 'recuperar',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | componentes-recuperar-recuperar-module */
+        "componentes-recuperar-recuperar-module").then(__webpack_require__.bind(null,
+        /*! ./componentes/recuperar/recuperar.module */
+        "./src/app/componentes/recuperar/recuperar.module.ts")).then(function (m) {
+          return m.RecuperarPageModule;
         });
       }
     }];

@@ -463,7 +463,7 @@ const routes = [
     },
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'login',
         pathMatch: 'full'
     },
     {
@@ -521,6 +521,14 @@ const routes = [
     {
         path: 'tutoriales',
         loadChildren: () => __webpack_require__.e(/*! import() | componentes-tutoriales-tutoriales-module */ "componentes-tutoriales-tutoriales-module").then(__webpack_require__.bind(null, /*! ./componentes/tutoriales/tutoriales.module */ "./src/app/componentes/tutoriales/tutoriales.module.ts")).then(m => m.TutorialesPageModule)
+    },
+    {
+        path: 'registro',
+        loadChildren: () => __webpack_require__.e(/*! import() | componentes-registro-registro-module */ "componentes-registro-registro-module").then(__webpack_require__.bind(null, /*! ./componentes/registro/registro.module */ "./src/app/componentes/registro/registro.module.ts")).then(m => m.RegistroPageModule)
+    },
+    {
+        path: 'recuperar',
+        loadChildren: () => __webpack_require__.e(/*! import() | componentes-recuperar-recuperar-module */ "componentes-recuperar-recuperar-module").then(__webpack_require__.bind(null, /*! ./componentes/recuperar/recuperar.module */ "./src/app/componentes/recuperar/recuperar.module.ts")).then(m => m.RecuperarPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {

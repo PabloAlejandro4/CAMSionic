@@ -9,6 +9,8 @@
 ion-button {
     width: 280px;
     margin: auto;
+    margin-top: 10px;
+    margin-left: 40px;
 }
 
 ion-item {
@@ -22,4 +24,10 @@ ion-input {
     text-align: left;
     color: rgb(141, 138, 138);
     font-size: 18px;
+}
+
+.a {
+    float: right;
+    padding-top: 10px;
+    padding-right: 40px;
 }

@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Recuperar contraseña</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref='/login'></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <br>
+    <ion-item>
+        <ion-input placeholder="Correo electronico" value="{{correoelectronico}}" [(ngModel)]="correoelectronico"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button (click)="loading()" expand="block" color="success">
+        <ion-icon name="paper-plane"></ion-icon>Enviar</ion-button>
+</ion-content>

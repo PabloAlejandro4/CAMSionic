@@ -13,17 +13,22 @@
         <ion-label>
             <ion-icon name="person-outline"></ion-icon>
         </ion-label>
-        <ion-input placeholder="Usuario" value="{{usuario}}" [(ngModel)]="usuario"></ion-input>
+        <ion-input placeholder="Correo" value="{{usuario}}" [(ngModel)]="usuario"></ion-input>
     </ion-item>
+
     <ion-item>
         <ion-label>
             <ion-icon name="key-outline"></ion-icon>
         </ion-label>
         <ion-input placeholder="Contraseña" id="contraseña" type="password" value="{{password}}" [(ngModel)]="password"></ion-input>
     </ion-item>
-    <br>
-    <br>
 
-    <ion-button expand="block" outline>Iniciar sesion</ion-button>
+    <br>
+    <a class="a" routerLink='/recuperar'>Recuperar mi contraseña</a>
+    <br>
+    <ion-button routerLink='/home'>Iniciar sesion</ion-button>
+    <br>
+    <a class="a" routerLink='/registro'>Registate</a>
+
 
 </ion-content>

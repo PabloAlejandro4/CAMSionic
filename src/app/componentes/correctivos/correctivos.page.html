@@ -9,6 +9,7 @@
 </ion-header>
 
 <ion-content>
+
     <form action="" enctype="multipart/form-data">
         <ion-button (click)="hacerFoto()">Tomar Foto</ion-button>
         <ion-img [src]="foto" *ngIf="foto"></ion-img>
@@ -17,4 +18,5 @@
         <ion-button (click)='obtenerImg()'>Mostrar Foto</ion-button>
     </form>
     <ion-img src="http://localhost:3000/imagenes/out.jpg"></ion-img>
+
 </ion-content>
