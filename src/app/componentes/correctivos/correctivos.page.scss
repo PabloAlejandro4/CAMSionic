@@ -1,9 +1,54 @@
-ion-button {
+button {
+    margin-top: 20px;
+    margin-block-end: 20px;
     float: left;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
 }
 
 ion-img {
     width: 100px;
     height: 150px;
     float: left;
+}
+
+select {
+    font-size: 16px;
+    border: none
+}
+
+ion-item {
+    margin: auto;
+    margin-top: 20px;
+    width: 280px;
+}
+
+ion-searchbar {
+    margin: auto;
+    width: 280px;
+}
+
+ion-card {
+    width: 310px;
+    height: 60px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+div {
+    width: 310px;
+    margin: auto;
+    margin-top: 10px;
+    border-color: black;
+    border-radius: 3px;
+}
+
+.vertical {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.interna {
+    height: fit-content;
 }

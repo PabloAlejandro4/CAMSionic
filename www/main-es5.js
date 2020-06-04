@@ -713,7 +713,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         messagingSenderId: '80149066201',
         appId: '1:80149066201:web:f5e2abb3691fdf3891a9c8',
         measurementId: 'G-DK2ZX79DHV'
-      }
+      },
+      urlApi: 'http://192.168.1.71:3000/api/'
     };
     /*
      * For easier debugging in development mode, you can import the following file

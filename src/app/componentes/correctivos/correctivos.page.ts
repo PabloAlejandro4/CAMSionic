@@ -12,13 +12,22 @@ import Swal from 'sweetalert2';
   styleUrls: ['./correctivos.page.scss'],
 })
 export class CorrectivosPage implements OnInit {
- foto: any;
- informacionImagen: any;
+ //foto: any;
+ //informacionImagen: any;
+ empresa: string;
+ mostrardiv: boolean;
   constructor(private camera: Camera,private httpClient: HttpClient) { 
-    initializeApp(environment.firebase);
-
+    //initializeApp(environment.firebase);
+this.mostrardiv = false;
   }
-
+  r(){
+    console.log('hola');
+    this.mostrardiv = !this.mostrardiv;
+  }
+  hide(){
+    this.mostrardiv=false;
+  }
+/*
   async hacerFoto() {
   
     const options: CameraOptions = {
@@ -35,9 +44,9 @@ export class CorrectivosPage implements OnInit {
     });
   }
   guardarImg(){
-    /*console.log(foto);
+    console.log(foto);
     this.imagenesService.guardarFoto(foto);
-    this.imagenesService.obtenerFotos();*/
+    this.imagenesService.obtenerFotos();
     const pictures = storage().ref('pictures/CAMS/');
     pictures.putString(this.foto, 'data_url');
     let urlI = pictures.getDownloadURL();
@@ -90,7 +99,7 @@ obtenerImg(){
     console.log(error);
   });
   
-}
+}*/
 
   ngOnInit() {
   }
