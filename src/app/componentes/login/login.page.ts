@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../servicios/Login.service';
+import { LogearService } from '../servicios/Logear.service';
 
 
 @Component({
@@ -12,10 +12,10 @@ export class LoginPage implements OnInit {
   password: string;
 
 
-  constructor(public login: LoginService) { }
+  constructor(public log: LogearService) { }
 
 logear(){
-  this.login.Logear(this.usuario, this.password);
+  this.log.Logear(this.usuario, this.password);
 }
 
   ngOnInit() {

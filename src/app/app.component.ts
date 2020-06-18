@@ -23,27 +23,7 @@ export class AppComponent {
 redirectHome(){
 
 }
-cerrarSesion(){
-  console.log('sesion Cerrada');
-  Swal.fire({
-    title: 'Estas Seguro?',
-    text: 'Estas apunto de cerrar tu sesion',
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Cerrar'
-  }).then((result) => {
-    if (result.value) {
-      this.router.navigate(['login']);
-      Swal.fire(
-        'Sesion Cerrada',
-        'Nos vemos pronto!',
-        'success'
-      );
-    }
-  });
-}
+
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();

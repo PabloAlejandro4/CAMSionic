@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-
+import { ModalController, AlertController } from '@ionic/angular';
 import { storage, initializeApp } from 'firebase';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
+import { NuevocorrectivoPage } from '../nuevocorrectivo/nuevocorrectivo.page';
 
 @Component({
   selector: 'app-correctivos',
@@ -14,12 +15,22 @@ import Swal from 'sweetalert2';
 export class CorrectivosPage implements OnInit {
  //foto: any;
  //informacionImagen: any;
- empresa: string;
+ opcion: string;
  mostrardiv: boolean;
-  constructor(private camera: Camera,private httpClient: HttpClient) { 
+  constructor(private camera: Camera, private modalCtrl: ModalController) { 
     //initializeApp(environment.firebase);
 this.mostrardiv = false;
   }
+  async agregar(){
+    const modal = await this.modalCtrl.create({
+         component: NuevocorrectivoPage,
+         componentProps: {
+           Actividad: 'Grupo electrogeno'
+         }
+     });
+
+    return modal.present();
+   }
   r(){
     console.log('hola');
     this.mostrardiv = !this.mostrardiv;

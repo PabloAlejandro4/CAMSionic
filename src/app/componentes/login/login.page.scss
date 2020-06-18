@@ -10,7 +10,7 @@ ion-button {
     width: 280px;
     margin: auto;
     margin-top: 10px;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 ion-item {
@@ -29,5 +29,18 @@ ion-input {
 .a {
     float: right;
     padding-top: 10px;
-    padding-right: 40px;
+    padding-right: 20px;
+}
+
+.b {
+    float: right;
+    padding-top: 10px;
+    padding-right: 20px;
+    margin-block-end: 20px;
+}
+
+ion-card {
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
 }

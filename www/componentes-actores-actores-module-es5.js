@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n    <ion-toolbar color=\"tertiary\">\r\n        <ion-buttons slot=\"start\">\r\n            <ion-back-button default-href=\"home\"></ion-back-button>\r\n        </ion-buttons>\r\n        <ion-title>Actores, Act. y Tareas</ion-title>\r\n\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header>\r\n    <ion-toolbar color=\"tertiary\">\r\n        <ion-buttons slot=\"start\">\r\n            <ion-back-button default-href=\"home\"></ion-back-button>\r\n        </ion-buttons>\r\n        <ion-title>Actores, Act. y Tareas</ion-title>\r\n\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <ion-button (click)=\"checarRed()\"> Toast</ion-button>\r\n\r\n</ion-content>";
     /***/
   },
 
@@ -209,19 +209,120 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @ionic-native/network/ngx */
+    "./node_modules/@ionic-native/network/__ivy_ngcc__/ngx/index.js");
 
     var ActoresPage = /*#__PURE__*/function () {
-      function ActoresPage() {
+      function ActoresPage(network) {
         _classCallCheck(this, ActoresPage);
+
+        this.network = network;
       }
 
       _createClass(ActoresPage, [{
+        key: "checarRed",
+        value: function checarRed() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var _this = this;
+
+            var disconnectSubscription, connectSubscription;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    disconnectSubscription = this.network.onDisconnect().subscribe(function () {
+                      console.log('network was disconnected :-(');
+                      _this.enLinea = false;
+
+                      _this.offLineToast();
+                    });
+                    connectSubscription = this.network.onConnect().subscribe(function () {
+                      console.log('network connected!');
+                      _this.enLinea = true;
+
+                      _this.onLineToast();
+
+                      setTimeout(function () {
+                        if (_this.network.type === 'wifi') {
+                          console.log('we got a wifi connection, woohoo!');
+                          _this.enLinea = true;
+
+                          _this.onLineToast();
+                        }
+                      }, 3000);
+                    });
+
+                  case 2:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+        }
+      }, {
+        key: "onLineToast",
+        value: function onLineToast() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            var toast;
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    toast = document.createElement('ion-toast');
+                    toast.message = 'Conectado a Internet';
+                    toast.duration = 2000;
+                    document.body.appendChild(toast);
+                    return _context2.abrupt("return", toast.present());
+
+                  case 5:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2);
+          }));
+        }
+      }, {
+        key: "offLineToast",
+        value: function offLineToast() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            var toast;
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    toast = document.createElement('ion-toast');
+                    toast.message = 'Sin Conexion a Internet';
+                    toast.duration = 2000;
+                    document.body.appendChild(toast);
+                    return _context3.abrupt("return", toast.present());
+
+                  case 5:
+                  case "end":
+                    return _context3.stop();
+                }
+              }
+            }, _callee3);
+          }));
+        }
+      }, {
         key: "ngOnInit",
         value: function ngOnInit() {}
       }]);
 
       return ActoresPage;
     }();
+
+    ActoresPage.ctorParameters = function () {
+      return [{
+        type: _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_2__["Network"]
+      }];
+    };
 
     ActoresPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-actores',

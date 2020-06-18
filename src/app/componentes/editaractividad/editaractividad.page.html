@@ -1,0 +1,76 @@
+<ion-header>
+
+    <ion-toolbar color="primary">
+
+        <ion-title>Editar Actividad</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+
+            <ion-card-title>{{Actividad}}</ion-card-title>
+
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid id="capa">
+                <ion-row>
+                    <ion-col>Actividad</ion-col>
+                    <ion-col>Criticidad</ion-col>
+                    <ion-col></ion-col>
+
+                </ion-row>
+                <ion-row *ngFor="let item of items index as i">
+                    <ion-col>
+                        <ion-input placeholder="Nombre" [(ngModel)]="tareas[i].nombre"></ion-input>
+                    </ion-col>
+                    <ion-col>
+                        <ion-select [(ngModel)]="tareas[i].criticidad">
+                            <ion-select-option value="alta">Alta</ion-select-option>
+                            <ion-select-option value="media">Media</ion-select-option>
+                            <ion-select-option value="baja">Baja</ion-select-option>
+
+                        </ion-select>
+
+                    </ion-col>
+                    <ion-col>
+                        <button style="background-color: #3880ff; border-radius: 4px;" (click)="salvar(i)">
+                  <ion-icon style="height: 30px" name="checkmark-circle-outline"></ion-icon>
+                </button>
+                        <button style="background-color: #eb445a; border-radius: 4px; margin-left: 10px;" (click)="quit(i)">
+                  <ion-icon style="height: 30px" name="trash"></ion-icon>
+                  
+              </button>
+
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <button style="background-color: white; float: right;" (click)="ADD()">
+                      <ion-icon  name="add-circle-outline"></ion-icon></button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button color="danger" (click)="alert()">Cancelar</ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button>Borrar</ion-button>
+
+                    </ion-col>
+                    <ion-col>
+                        <ion-button color="success" (click)="guardar()">Guardar</ion-button>
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+
+
+    </ion-card>
+
+</ion-content>

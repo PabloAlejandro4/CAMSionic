@@ -20,7 +20,7 @@ select {
 
 ion-item {
     margin: auto;
-    margin-top: 20px;
+    margin-top: 60px;
     width: 280px;
 }
 
@@ -31,9 +31,10 @@ ion-searchbar {
 
 ion-card {
     width: 310px;
-    height: 60px;
+    height: 70px;
     margin: auto;
     margin-top: 10px;
+    text-align: center;
 }
 
 div {
@@ -51,4 +52,19 @@ div {
 
 .interna {
     height: fit-content;
+}
+
+ion-card-subtitle {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.interna {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+}
+
+p {
+    font-weight: bold;
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { RegistroService } from '../servicios/registro.service';
 import Swal from 'sweetalert2';
+import { ActionSheetController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-registro',
@@ -21,38 +23,47 @@ export class RegistroPage  {
   confirmacion: string;
   empresa: string;
   base64Image: any;
-  constructor(private camera: Camera, public registroService: RegistroService) { 
+  constructor(private camera: Camera, public registroService: RegistroService, public actionSheetController: ActionSheetController) { 
     this.base64Image = '';
+    this.empresa = '';
+    this.categoria = '';
+    this.cm = '';
+    this.alias = '';
+    this.nombre = '';
+    this.apellidos = '';
+    this.correoelectronico = '';
+    this.password = '';
+    this.confirmacion = '';
+    this.telefono = '';
   }
- 
-  async presentAlertConfirm() {
-    const alert = document.createElement('ion-alert');
-    alert.cssClass = 'my-custom-class';
-    alert.header = 'Subir Foto';
-    alert.message = 'Completar con';
-    alert.buttons = [
-      {
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Completar con',
+      cssClass: 'my-custom-class',
+      buttons: [{
         text: 'Camara',
-        cssClass: 'secondary',
-        handler: (blah) => {
+        icon: 'camera',
+        handler: () => {
+          console.log('Share clicked');
           this.hacerFoto();
         }
       }, {
         text: 'Galeria',
+        icon: 'image',
         handler: () => {
-               this.fotoGaleria();
+          console.log('Favorite clicked');
+          this.fotoGaleria();
         }
-      }
-    ];
-    document.body.appendChild(alert);
-    return alert.present();
-  }
-
-  show(){
-
-    this.presentAlertConfirm();
-    
-    
+      }, {
+        text: 'Cancelar',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
   }
 
 async fotoGaleria(){
@@ -95,6 +106,23 @@ async quitarImagen(){
 
 }
 
+async validar(){
+  /*if(  this.cm || this.alias || this.nombre  || this.correoelectronico
+    || this.password || this.confirmacion || this.telefono === ''){
+    console.log('completa los campos');
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Invalido',
+      text: 'Por favor completa todos los campos',
+      showConfirmButton: true         
+    });
+        }else{
+          console.log('listo');
+          this.guardar();
+        }*/ this.guardar();
+}
+
   async guardar(){
     //this.registroService.GuardarRegistro(this.base64Image);
     console.log(this.alias);
@@ -109,6 +137,7 @@ async quitarImagen(){
     console.log(this.password);
     console.log(this.confirmacion);
 
+  
     if (this.password === this.confirmacion){
       console.log('lisot');
       if (this.base64Image === ''){

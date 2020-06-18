@@ -166,7 +166,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-app>\r\n    <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n\r\n<ion-app>\r\n    <ion-menu contentId=\"content1\" side=\"start\">\r\n        <ion-header>\r\n            <ion-toolbar color=\"primary\">\r\n                <ion-title>Menu</ion-title>\r\n            </ion-toolbar>\r\n        </ion-header>\r\n        <ion-content>\r\n            <ion-list>\r\n                <ion-item routerLink='/mantenimiento'>Mantenimiento</ion-item>\r\n                <ion-item routerLink='/correctivos'>Correctivos</ion-item>\r\n                <ion-item routerLink='/almacen'>Almacen</ion-item>\r\n                <ion-item routerLink='/administrativo'>Administrativo</ion-item>\r\n                <ion-item routerLink='/calendario'>Calendario</ion-item>\r\n                <ion-item routerLink='/configuracion'>Configuracion</ion-item>\r\n                <ion-item routerLink='/perfil'>Perfil</ion-item>\r\n                <ion-item routerLink='/centrales'>Centrales</ion-item>\r\n                <ion-item routerLink='/usuarios'>Usuarios</ion-item>\r\n                <ion-item routerLink='/actores'>Actores, Actividades y Tareas</ion-item>\r\n                <ion-item routerLink='/archivo'>Archivo Muerto</ion-item>\r\n                <ion-item routerLink='/tutoriales'>Tutoriales</ion-item>\r\n                <ion-item (click)='cerrarSesion()'>Cerrar Sesion</ion-item>\r\n\r\n\r\n\r\n            </ion-list>\r\n        </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"content1\" main></ion-router-outlet>\r\n</ion-app>";
+    __webpack_exports__["default"] = "<ion-app>\r\n    <ion-router-outlet></ion-router-outlet>\r\n</ion-app>";
     /***/
   },
 
@@ -211,9 +211,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var routes = [{
       path: 'home',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | home-home-module */
-        "home-home-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null,
         /*! ./home/home.module */
         "./src/app/home/home.module.ts")).then(function (m) {
           return m.HomePageModule;
@@ -226,42 +226,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'login',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | componentes-login-login-module */
-        "componentes-login-login-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("componentes-login-login-module")]).then(__webpack_require__.bind(null,
         /*! ./componentes/login/login.module */
         "./src/app/componentes/login/login.module.ts")).then(function (m) {
           return m.LoginPageModule;
         });
       }
     }, {
-      path: 'mantenimiento',
-      loadChildren: function loadChildren() {
-        return __webpack_require__.e(
-        /*! import() | mantenimiento-mantenimiento-module */
-        "mantenimiento-mantenimiento-module").then(__webpack_require__.bind(null,
-        /*! ./mantenimiento/mantenimiento.module */
-        "./src/app/mantenimiento/mantenimiento.module.ts")).then(function (m) {
-          return m.MantenimientoPageModule;
-        });
-      }
-    }, {
-      path: 'mantenimiento',
-      loadChildren: function loadChildren() {
-        return __webpack_require__.e(
-        /*! import() | mantenimiento-mantenimiento-module */
-        "mantenimiento-mantenimiento-module").then(__webpack_require__.bind(null,
-        /*! ./mantenimiento/mantenimiento.module */
-        "./src/app/mantenimiento/mantenimiento.module.ts")).then(function (m) {
-          return m.MantenimientoPageModule;
-        });
-      }
-    }, {
       path: 'correctivos',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | componentes-correctivos-correctivos-module */
-        "componentes-correctivos-correctivos-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~componentes-correctivos-correctivos-module~componentes-nuevocorrectivo-nuevocorrectivo-module"), __webpack_require__.e("componentes-correctivos-correctivos-module")]).then(__webpack_require__.bind(null,
         /*! ./componentes/correctivos/correctivos.module */
         "./src/app/componentes/correctivos/correctivos.module.ts")).then(function (m) {
           return m.CorrectivosPageModule;
@@ -314,9 +292,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'perfil',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | componentes-perfil-perfil-module */
-        "componentes-perfil-perfil-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("componentes-perfil-perfil-module")]).then(__webpack_require__.bind(null,
         /*! ./componentes/perfil/perfil.module */
         "./src/app/componentes/perfil/perfil.module.ts")).then(function (m) {
           return m.PerfilPageModule;
@@ -380,9 +358,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'registro',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | componentes-registro-registro-module */
-        "componentes-registro-registro-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("componentes-registro-registro-module")]).then(__webpack_require__.bind(null,
         /*! ./componentes/registro/registro.module */
         "./src/app/componentes/registro/registro.module.ts")).then(function (m) {
           return m.RegistroPageModule;
@@ -391,12 +369,100 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'recuperar',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | componentes-recuperar-recuperar-module */
-        "componentes-recuperar-recuperar-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("componentes-recuperar-recuperar-module")]).then(__webpack_require__.bind(null,
         /*! ./componentes/recuperar/recuperar.module */
         "./src/app/componentes/recuperar/recuperar.module.ts")).then(function (m) {
           return m.RecuperarPageModule;
+        });
+      }
+    }, {
+      path: 'actividad',
+      loadChildren: function loadChildren() {
+        return Promise.all(
+        /*! import() | componentes-actividad-actividad-module */
+        [__webpack_require__.e("common"), __webpack_require__.e("componentes-actividad-actividad-module")]).then(__webpack_require__.bind(null,
+        /*! ./componentes/actividad/actividad.module */
+        "./src/app/componentes/actividad/actividad.module.ts")).then(function (m) {
+          return m.ActividadPageModule;
+        });
+      }
+    }, {
+      path: 'crearactividad',
+      loadChildren: function loadChildren() {
+        return Promise.all(
+        /*! import() | componentes-crearactividad-crearactividad-module */
+        [__webpack_require__.e("common"), __webpack_require__.e("componentes-crearactividad-crearactividad-module")]).then(__webpack_require__.bind(null,
+        /*! ./componentes/crearactividad/crearactividad.module */
+        "./src/app/componentes/crearactividad/crearactividad.module.ts")).then(function (m) {
+          return m.CrearactividadPageModule;
+        });
+      }
+    }, {
+      path: 'mantenimiento',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | componentes-mantenimiento-mantenimiento-module */
+        "componentes-mantenimiento-mantenimiento-module").then(__webpack_require__.bind(null,
+        /*! ./componentes/mantenimiento/mantenimiento.module */
+        "./src/app/componentes/mantenimiento/mantenimiento.module.ts")).then(function (m) {
+          return m.MantenimientoPageModule;
+        });
+      }
+    }, {
+      path: 'editaractividad',
+      loadChildren: function loadChildren() {
+        return Promise.all(
+        /*! import() | componentes-editaractividad-editaractividad-module */
+        [__webpack_require__.e("common"), __webpack_require__.e("componentes-editaractividad-editaractividad-module")]).then(__webpack_require__.bind(null,
+        /*! ./componentes/editaractividad/editaractividad.module */
+        "./src/app/componentes/editaractividad/editaractividad.module.ts")).then(function (m) {
+          return m.EditaractividadPageModule;
+        });
+      }
+    }, {
+      path: 'codigo',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | componentes-confirmarcodigo-confirmarcodigo-module */
+        "componentes-confirmarcodigo-confirmarcodigo-module").then(__webpack_require__.bind(null,
+        /*! ./componentes/confirmarcodigo/confirmarcodigo.module */
+        "./src/app/componentes/confirmarcodigo/confirmarcodigo.module.ts")).then(function (m) {
+          return m.ConfirmarcodigoPageModule;
+        });
+      }
+    }, {
+      path: 'permisos',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | componentes-permisos-permisos-module */
+        "componentes-permisos-permisos-module").then(__webpack_require__.bind(null,
+        /*! ./componentes/permisos/permisos.module */
+        "./src/app/componentes/permisos/permisos.module.ts")).then(function (m) {
+          return m.PermisosPageModule;
+        });
+      }
+    }, {
+      path: 'nuevocorrectivo',
+      loadChildren: function loadChildren() {
+        return Promise.all(
+        /*! import() | componentes-nuevocorrectivo-nuevocorrectivo-module */
+        [__webpack_require__.e("default~componentes-correctivos-correctivos-module~componentes-nuevocorrectivo-nuevocorrectivo-module"), __webpack_require__.e("componentes-nuevocorrectivo-nuevocorrectivo-module")]).then(__webpack_require__.bind(null,
+        /*! ./componentes/nuevocorrectivo/nuevocorrectivo.module */
+        "./src/app/componentes/nuevocorrectivo/nuevocorrectivo.module.ts")).then(function (m) {
+          return m.NuevocorrectivoPageModule;
+        });
+      }
+    }, {
+      path: 'fotos',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | componentes-fotos-fotos-module */
+        "componentes-fotos-fotos-module").then(__webpack_require__.bind(null,
+        /*! ./componentes/fotos/fotos.module */
+        "./src/app/componentes/fotos/fotos.module.ts")).then(function (m) {
+          return m.FotosPageModule;
         });
       }
     }];
@@ -489,16 +555,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-    /* harmony import */
-
-
-    var sweetalert2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! sweetalert2 */
-    "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-    /* harmony import */
-
-
-    var sweetalert2__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_6__);
 
     var AppComponent = /*#__PURE__*/function () {
       function AppComponent(platform, splashScreen, statusBar, router) {
@@ -515,36 +571,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "redirectHome",
         value: function redirectHome() {}
       }, {
-        key: "cerrarSesion",
-        value: function cerrarSesion() {
-          var _this = this;
-
-          console.log('sesion Cerrada');
-          sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
-            title: 'Estas Seguro?',
-            text: 'Estas apunto de cerrar tu sesion',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Cerrar'
-          }).then(function (result) {
-            if (result.value) {
-              _this.router.navigate(['login']);
-
-              sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire('Sesion Cerrada', 'Nos vemos pronto!', 'success');
-            }
-          });
-        }
-      }, {
         key: "initializeApp",
         value: function initializeApp() {
-          var _this2 = this;
+          var _this = this;
 
           this.platform.ready().then(function () {
-            _this2.statusBar.styleDefault();
+            _this.statusBar.styleDefault();
 
-            _this2.splashScreen.hide();
+            _this.splashScreen.hide();
           });
         }
       }]);
@@ -661,6 +695,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! @ionic-native/camera/ngx */
     "./node_modules/@ionic-native/camera/__ivy_ngcc__/ngx/index.js");
+    /* harmony import */
+
+
+    var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! @ionic-native/network/ngx */
+    "./node_modules/@ionic-native/network/__ivy_ngcc__/ngx/index.js");
+    /* harmony import */
+
+
+    var _ionic_storage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! @ionic/storage */
+    "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -669,8 +715,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
       entryComponents: [],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"]],
-      providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"], _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_10__["Camera"], {
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"], _ionic_storage__WEBPACK_IMPORTED_MODULE_12__["IonicStorageModule"].forRoot()],
+      providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"], _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_10__["Camera"], _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_11__["Network"], {
         provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"],
         useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"]
       }],
@@ -714,7 +760,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         appId: '1:80149066201:web:f5e2abb3691fdf3891a9c8',
         measurementId: 'G-DK2ZX79DHV'
       },
-      urlApi: 'http://192.168.1.71:3000/api/'
+      urlApi: 'http://192.168.1.71:3000/api/',
+      user: {
+        name: '',
+        alias: '',
+        expediente: '',
+        telefono: '',
+        email: '',
+        area: '',
+        cm: ''
+      },
+      password: ''
     };
     /*
      * For easier debugging in development mode, you can import the following file

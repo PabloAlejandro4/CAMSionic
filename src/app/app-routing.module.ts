@@ -16,14 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./componentes/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'mantenimiento',
-    loadChildren: () => import('./mantenimiento/mantenimiento.module').then( m => m.MantenimientoPageModule)
-  },
-  {
-    path: 'mantenimiento',
-    loadChildren: () => import('./mantenimiento/mantenimiento.module').then( m => m.MantenimientoPageModule)
-  },
-  {
     path: 'correctivos',
     loadChildren: () => import('./componentes/correctivos/correctivos.module').then( m => m.CorrectivosPageModule)
   },
@@ -74,7 +66,43 @@ const routes: Routes = [
   {
     path: 'recuperar',
     loadChildren: () => import('./componentes/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+  },
+  {
+    path: 'actividad',
+    loadChildren: () => import('./componentes/actividad/actividad.module').then( m => m.ActividadPageModule)
+  },
+  {
+    path: 'crearactividad',
+    loadChildren: () => import('./componentes/crearactividad/crearactividad.module').then( m => m.CrearactividadPageModule)
+  },
+  {
+    path: 'mantenimiento',
+    loadChildren: () => import('./componentes/mantenimiento/mantenimiento.module').then( m => m.MantenimientoPageModule)
+  },
+  {
+    path: 'editaractividad',
+    loadChildren: () => import('./componentes/editaractividad/editaractividad.module').then( m => m.EditaractividadPageModule)
+  },
+  {
+    path: 'codigo',
+    loadChildren: () => import('./componentes/confirmarcodigo/confirmarcodigo.module').then( m => m.ConfirmarcodigoPageModule)
+  },  {
+    path: 'permisos',
+    loadChildren: () => import('./componentes/permisos/permisos.module').then( m => m.PermisosPageModule)
+  },
+  {
+    path: 'nuevocorrectivo',
+    loadChildren: () => import('./componentes/nuevocorrectivo/nuevocorrectivo.module').then( m => m.NuevocorrectivoPageModule)
+  },
+  {
+    path: 'fotos',
+    loadChildren: () => import('./componentes/fotos/fotos.module').then( m => m.FotosPageModule)
   }
+
+
+
+
+
 
 
 

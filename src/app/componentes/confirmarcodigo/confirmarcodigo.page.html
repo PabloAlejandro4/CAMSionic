@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref='/recuperar'></ion-back-button>
+        </ion-buttons>
+        <ion-title>Confirmar codigo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Escribe el codigo de 6 digitos que ha llegado a tu correo </ion-card-title>
+            <br>
+            <ion-item style="margin-left: 20px; margin-right: 20px;">
+                <ion-input placeholder="Codigo de confirmacion" [(ngModel)]="codigo"></ion-input>
+            </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-label position="floating">Nueva Contraseña</ion-label>
+                <ion-input placeholder="Contraseña" [(ngModel)]="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Confirmar Contraseña</ion-label>
+                <ion-input placeholder="Confirmar" [(ngModel)]="confirmacion"></ion-input>
+            </ion-item>
+            <br>
+            <ion-button expand="block" color="success" (click)="restablecer()">
+                Restablecer</ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

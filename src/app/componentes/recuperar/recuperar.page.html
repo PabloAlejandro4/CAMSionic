@@ -9,10 +9,17 @@
 
 <ion-content>
     <br>
-    <ion-item>
-        <ion-input placeholder="Correo electronico" value="{{correoelectronico}}" [(ngModel)]="correoelectronico"></ion-input>
-    </ion-item>
-    <br>
-    <ion-button (click)="loading()" expand="block" color="success">
-        <ion-icon name="paper-plane"></ion-icon>Enviar</ion-button>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Escribe tu cuenta de correo electronico y te enviaremos una contraseña temporal con la que podras ingresar al sistema y editar a continuacion si lo deseas.</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-input placeholder="Correo electronico" value="{{correoelectronico}}" [(ngModel)]="correoelectronico"></ion-input>
+            </ion-item>
+            <br>
+            <ion-button (click)="loading()" expand="block" color="success">
+                <ion-icon name="paper-plane"></ion-icon>Enviar</ion-button>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

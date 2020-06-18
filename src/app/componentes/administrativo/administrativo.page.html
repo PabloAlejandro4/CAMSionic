@@ -1,13 +1,17 @@
-<ion-header>
-    <ion-toolbar color="tertiary">
-        <ion-buttons slot="start">
-            <ion-back-button default-href="home"></ion-back-button>
-        </ion-buttons>
-        <ion-title>Administrativo</ion-title>
-
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-title>Searchbar</ion-title>
     </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
-
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+        <ion-card *ngFor="let item of items">
+            <ion-header>
+                <ion-title>{{item}}</ion-title>
+            </ion-header>
+        </ion-card>
+    </ion-list>
 </ion-content>

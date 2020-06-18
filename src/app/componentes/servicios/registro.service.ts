@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class RegistroService {
   url: string; 
-  constructor(private httpClient: HttpClient,) 
+  constructor(private httpClient: HttpClient, private router: Router) 
   { this.url = environment.urlApi;
   }
   async GuardarRegistro(name, alias, expediente, telefono, email,password ){
@@ -25,10 +26,10 @@ export class RegistroService {
             Swal.fire({
               position: 'center',
               icon: 'success',
-              title: 'Exito' + data,
+              title: 'Bienvenido ' + name,
               showConfirmButton: true
             });
-            //this.router.navigate(['tabs', 'tab1' ]);
+            this.router.navigate(['home' ]);
           },
           (err) => {
             console.log(err);
@@ -59,10 +60,20 @@ export class RegistroService {
             Swal.fire({
               position: 'center',
               icon: 'success',
-              title: 'Exito' + data,
+              title: 'Bienvenido ' + name,
               showConfirmButton: true
             });
-            //this.router.navigate(['tabs', 'tab1' ]);
+            this.router.navigate(['home' ]);
+            environment.user = {
+              name,
+              alias,
+              expediente,
+              telefono,
+              email,
+              area: '',
+              cm: ''
+        
+          };
           },
           (err) => {
             console.log(err);

@@ -1,8 +1,144 @@
-<ion-header>
-    <ion-toolbar color="primary">
-        <ion-title><img src="assets/images/logo-ca2.png" style="width:60px"></ion-title>
-        <ion-buttons slot="start">
-            <ion-menu-button autoHide="false"></ion-menu-button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-header>
+<ion-app>
+    <ion-menu side="start" content-id="main-content" color="primary">
+        <ion-header>
+            <ion-toolbar translucent>
+                <ion-title style="font-weight: bold;">Menu</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-item routerLink='/mantenimiento'>Mantenimiento</ion-item>
+                <ion-item routerLink='/correctivos'>Correctivos</ion-item>
+                <ion-item routerLink='/almacen'>Almacen</ion-item>
+                <ion-item routerLink='/administrativo'>Administrativo</ion-item>
+                <ion-item routerLink='/calendario'>Calendario</ion-item>
+                <ion-item style="font-weight: bold;">Configuracion</ion-item>
+                <ion-item routerLink='/perfil'>Perfil</ion-item>
+                <ion-item routerLink='/centrales'>Centrales</ion-item>
+                <ion-item routerLink='/usuarios'>Usuarios</ion-item>
+                <ion-item routerLink='/actores'>Areas</ion-item>
+                <ion-item routerLink='/actividad'>Actividades</ion-item>
+                <ion-item routerLink='/permisos'>Permisos</ion-item>
+                <ion-item style="font-weight: bold;">Soporte</ion-item>
+                <ion-item routerLink='/archivo'>Archivo Muerto</ion-item>
+                <ion-item routerLink='/tutoriales'>Tutoriales</ion-item>
+                <ion-item (click)="cerrarSesion()">Cerrar Sesion</ion-item>
+
+
+
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <div class="ion-page" id="main-content">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-buttons slot="start">
+                    <ion-menu-button></ion-menu-button>
+                </ion-buttons>
+                <ion-title>
+                    <ion-img src="assets/images/logo-ca2.png" style="width:60px"></ion-img>
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+            <!--<ion-input placeholder="Entrada" [(ngModel)]="valor"></ion-input>
+            <ion-button *ngIf="valor" (click)="guardar()">Guardar</ion-button>
+            <ion-button (click)="obtener()">Obtener</ion-button>
+            <ion-input [(ngModel)]="valorGuardado"></ion-input>-->
+
+            <ion-slides pager="true" [options]="slideOpts">
+                <ion-slide>
+
+                    <canvas #barCanvas></canvas>
+
+                </ion-slide>
+                <ion-slide>
+                    <canvas #doughnutCanvas></canvas>
+
+                </ion-slide>
+                <ion-slide>
+
+                    <canvas #lineCanvas></canvas>
+
+                </ion-slide>
+            </ion-slides>
+
+            <ion-card>
+
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-card-title style=" margin-top: 20px;">Mantenimiento</ion-card-title>
+                        </ion-col>
+                        <ion-col no-padding>
+                            <img src="assets/images/mantenimiento-industrial.jpg">
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+
+            </ion-card>
+            <ion-card>
+
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-card-title style=" margin-top: 20px;">Correctivos</ion-card-title>
+                        </ion-col>
+                        <ion-col no-padding>
+                            <img src="assets/images/correctivos.jpg">
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+
+            </ion-card>
+
+            <ion-card>
+
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-card-title style=" margin-top: 20px;">Administrativo</ion-card-title>
+                        </ion-col>
+                        <ion-col no-padding>
+                            <img src="assets/images/admin.jpg">
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+
+            </ion-card>
+            <ion-card>
+
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-card-title style=" margin-top: 20px;">Almacen</ion-card-title>
+                        </ion-col>
+                        <ion-col no-padding>
+                            <img src="assets/images/almacen.jpg">
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+            <ion-card>
+
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-card-title style=" margin-top: 20px;">Calendario</ion-card-title>
+                        </ion-col>
+                        <ion-col no-padding>
+                            <img src="assets/images/calendario.png">
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+
+            </ion-card>
+        </ion-content>
+    </div>
+</ion-app>

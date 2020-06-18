@@ -1,0 +1,99 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Nuevo Correctivo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <br><br>
+    <div>
+        <label style="margin-left: 20px;"> Fecha: 05/06/2020
+    </label>
+        <br><br>
+        <label style="margin-left: 100px;  font-size: 30px;"> CLV-200515
+
+    </label>
+        <br><br>
+        <ion-label style="margin-left: 20px;"> Central: Parras
+
+        </ion-label>
+    </div>
+
+    <ion-item class="select">
+        <ion-label>Area</ion-label>
+        <ion-select [(ngModel)]="area">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item class="select">
+        <ion-label>Actividad</ion-label>
+        <ion-select [(ngModel)]="actividad">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item class="select">
+        <ion-label>Tarea</ion-label>
+        <ion-select [(ngModel)]="tarea">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item class="select">
+        <ion-label>Criticidad</ion-label>
+        <ion-select [(ngModel)]="criticidad">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item>Siniestro
+                    <ion-checkbox slot="end" [(ngModel)]="siniestro"></ion-checkbox>
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="stacked">Folios Externos</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <img id="img" *ngIf="imagenes[0]" src="assets/images/galeria.png" (click)="verFotos()">
+
+    <img style="height: 40px;" (click)="hacerFoto()" src="assets/images/addImage.png">
+
+    <ion-item style="font-size: 20px;  margin-right: 20px;">
+        Bitacora
+    </ion-item>
+    <ion-card>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col style="font-weight: bold;">Saul Carrillo </ion-col>
+                    <ion-col></ion-col>
+                    <ion-col style="font-weight: bold;"> 05/06/2020</ion-col>
+
+                </ion-row>
+                <ion-label style="margin-left: 5px;">Comentarios</ion-label>
+
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-item class="select">
+        <ion-input placeholder="Escribe un comentario"></ion-input>
+        <ion-icon name="send"></ion-icon>
+    </ion-item>
+
+
+
+    <ion-button (click)="guardar()">Guardar</ion-button>
+    <ion-button color="danger">Cancelar</ion-button>
+
+
+</ion-content>

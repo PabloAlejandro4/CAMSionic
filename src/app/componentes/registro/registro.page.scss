@@ -7,7 +7,7 @@
 }
 
 ion-item {
-    padding-left: 10px;
+    margin-left: 10px;
     padding-right: 20px;
     padding-top: 10px;
 }
@@ -22,15 +22,20 @@ select {
     border: none
 }
 
-img {
-    border-radius: 40%;
-    height: 90px;
-    float: right;
-    margin-right: 40px;
+ion-img {
+    border-radius: 4%;
+    height: 150px;
     border-color: black;
 }
 
 .alias {
     width: 220px;
     padding-left: 20px;
+}
+
+button {
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: white;
 }

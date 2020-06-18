@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n    <ion-toolbar color=\"tertiary\">\r\n        <ion-buttons slot=\"start\">\r\n            <ion-back-button default-href=\"home\"></ion-back-button>\r\n        </ion-buttons>\r\n        <ion-title>Administrativo</ion-title>\r\n\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header translucent>\r\n    <ion-toolbar>\r\n        <ion-title>Searchbar</ion-title>\r\n    </ion-toolbar>\r\n\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <ion-searchbar (ionInput)=\"getItems($event)\"></ion-searchbar>\r\n    <ion-list>\r\n        <ion-card *ngFor=\"let item of items\">\r\n            <ion-header>\r\n                <ion-title>{{item}}</ion-title>\r\n            </ion-header>\r\n        </ion-card>\r\n    </ion-list>\r\n</ion-content>";
     /***/
   },
 
@@ -213,9 +213,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AdministrativoPage = /*#__PURE__*/function () {
       function AdministrativoPage() {
         _classCallCheck(this, AdministrativoPage);
+
+        this.initializeItems();
       }
 
       _createClass(AdministrativoPage, [{
+        key: "initializeItems",
+        value: function initializeItems() {
+          this.items = ['Amsterdam', 'Bogota', 'Buenos Aires', 'Cairo', 'Dhaka', 'Edinburgh', 'Geneva', 'Genoa', 'Glasglow', 'Hanoi', 'Hong Kong', 'Islamabad', 'Istanbul', 'Jakarta', 'Kiel', 'Kyoto', 'Le Havre', 'Lebanon', 'Lhasa', 'Lima', 'London', 'Los Angeles', 'Madrid', 'Manila', 'New York', 'Olympia', 'Oslo', 'Panama City', 'Peking', 'Philadelphia', 'San Francisco', 'Seoul', 'Taipeh', 'Tel Aviv', 'Tokio', 'Uelzen', 'Washington'];
+        }
+      }, {
+        key: "getItems",
+        value: function getItems(ev) {
+          // Reset items back to all of the items
+          this.initializeItems();
+          console.log(this.items); // set val to the value of the ev target
+
+          var val = ev.target.value; // if the value is an empty string don't filter the items
+
+          if (val && val.trim() != '') {
+            this.items = this.items.filter(function (item) {
+              return item.toLowerCase().indexOf(val.toLowerCase()) > -1;
+            });
+          }
+        }
+      }, {
         key: "ngOnInit",
         value: function ngOnInit() {}
       }]);

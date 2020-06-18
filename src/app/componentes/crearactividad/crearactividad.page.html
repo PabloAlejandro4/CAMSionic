@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar color="primary">
+
+        <ion-title>Crear Actividad</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Nueva Actividad</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-item>
+                <ion-label>Actividad:</ion-label>
+                <ion-input type="text" placeholder="Nombre de la Actividad" [(ngModel)]="nombre"></ion-input>
+
+            </ion-item>
+
+
+            <ion-button color="danger" (click)="cancel()" outline>Cancelar</ion-button>
+            <ion-button color="primary" outline (click)="add()">Guardar</ion-button>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
-import Swal from 'sweetalert2';
-import { Router, NavigationExtras} from '@angular/router';
+import { RecuperarService } from '../servicios/recuperar.service';
 
 @Component({
   selector: 'app-recuperar',
@@ -10,22 +9,17 @@ import { Router, NavigationExtras} from '@angular/router';
 })
 export class RecuperarPage implements OnInit {
   correoelectronico: string;
-  constructor(public loadingCtrl: LoadingController, private router: Router) { }
+  constructor(public loadingCtrl: LoadingController, private recuperar: RecuperarService) { }
   
-  loading(){
-    Swal.fire({
-      title: 'Listo',
-      text: 'Se ha enviado un correo a tu cuenta con tu contraseña',
-      icon: 'success',
-      showConfirmButton: true
-    });
-    this.router.navigate(['login']);
+  async loading(){
 
     const loader = this.loadingCtrl.create({
       message: 'Por favor espere...',
       duration: 3000
     });
-    
+    (await loader).present();
+
+    this.recuperar.EnviarCorreo(this.correoelectronico);
   }
   ngOnInit() {
   }

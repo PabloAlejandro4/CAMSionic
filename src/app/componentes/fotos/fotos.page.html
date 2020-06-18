@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Fotografias</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="cerrar()">Cerrar</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-content>
+        <ion-slides pager="true">
+            <ion-slide *ngFor="let foto of imagenes index as i">
+
+                <ion-img style="height: 250px;" src="{{foto}}"></ion-img>
+
+            </ion-slide>
+
+
+        </ion-slides>
+    </ion-content>
+</ion-content>

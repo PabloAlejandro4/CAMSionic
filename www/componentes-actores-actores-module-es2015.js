@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar color=\"tertiary\">\r\n        <ion-buttons slot=\"start\">\r\n            <ion-back-button default-href=\"home\"></ion-back-button>\r\n        </ion-buttons>\r\n        <ion-title>Actores, Act. y Tareas</ion-title>\r\n\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar color=\"tertiary\">\r\n        <ion-buttons slot=\"start\">\r\n            <ion-back-button default-href=\"home\"></ion-back-button>\r\n        </ion-buttons>\r\n        <ion-title>Actores, Act. y Tareas</ion-title>\r\n\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <ion-button (click)=\"checarRed()\"> Toast</ion-button>\r\n\r\n</ion-content>");
 
 /***/ }),
 
@@ -117,13 +117,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActoresPage", function() { return ActoresPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/network/ngx */ "./node_modules/@ionic-native/network/__ivy_ngcc__/ngx/index.js");
+
 
 
 let ActoresPage = class ActoresPage {
-    constructor() { }
+    constructor(network) {
+        this.network = network;
+    }
+    checarRed() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+                console.log('network was disconnected :-(');
+                this.enLinea = false;
+                this.offLineToast();
+            });
+            const connectSubscription = this.network.onConnect().subscribe(() => {
+                console.log('network connected!');
+                this.enLinea = true;
+                this.onLineToast();
+                setTimeout(() => {
+                    if (this.network.type === 'wifi') {
+                        console.log('we got a wifi connection, woohoo!');
+                        this.enLinea = true;
+                        this.onLineToast();
+                    }
+                }, 3000);
+            });
+        });
+    }
+    onLineToast() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const toast = document.createElement('ion-toast');
+            toast.message = 'Conectado a Internet';
+            toast.duration = 2000;
+            document.body.appendChild(toast);
+            return toast.present();
+        });
+    }
+    offLineToast() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const toast = document.createElement('ion-toast');
+            toast.message = 'Sin Conexion a Internet';
+            toast.duration = 2000;
+            document.body.appendChild(toast);
+            return toast.present();
+        });
+    }
     ngOnInit() {
     }
 };
+ActoresPage.ctorParameters = () => [
+    { type: _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_2__["Network"] }
+];
 ActoresPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-actores',

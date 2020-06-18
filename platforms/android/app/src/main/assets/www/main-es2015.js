@@ -436,7 +436,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n    <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n\r\n<ion-app>\r\n    <ion-menu contentId=\"content1\" side=\"start\">\r\n        <ion-header>\r\n            <ion-toolbar color=\"primary\">\r\n                <ion-title>Menu</ion-title>\r\n            </ion-toolbar>\r\n        </ion-header>\r\n        <ion-content>\r\n            <ion-list>\r\n                <ion-item routerLink='/mantenimiento'>Mantenimiento</ion-item>\r\n                <ion-item routerLink='/correctivos'>Correctivos</ion-item>\r\n                <ion-item routerLink='/almacen'>Almacen</ion-item>\r\n                <ion-item routerLink='/administrativo'>Administrativo</ion-item>\r\n                <ion-item routerLink='/calendario'>Calendario</ion-item>\r\n                <ion-item routerLink='/configuracion'>Configuracion</ion-item>\r\n                <ion-item routerLink='/perfil'>Perfil</ion-item>\r\n                <ion-item routerLink='/centrales'>Centrales</ion-item>\r\n                <ion-item routerLink='/usuarios'>Usuarios</ion-item>\r\n                <ion-item routerLink='/actores'>Actores, Actividades y Tareas</ion-item>\r\n                <ion-item routerLink='/archivo'>Archivo Muerto</ion-item>\r\n                <ion-item routerLink='/tutoriales'>Tutoriales</ion-item>\r\n                <ion-item (click)='cerrarSesion()'>Cerrar Sesion</ion-item>\r\n\r\n\r\n\r\n            </ion-list>\r\n        </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"content1\" main></ion-router-outlet>\r\n</ion-app>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n    <ion-router-outlet></ion-router-outlet>\r\n</ion-app>");
 
 /***/ }),
 
@@ -459,7 +459,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: 'home',
-        loadChildren: () => __webpack_require__.e(/*! import() | home-home-module */ "home-home-module").then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(m => m.HomePageModule)
+        loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(m => m.HomePageModule)
     },
     {
         path: '',
@@ -468,19 +468,11 @@ const routes = [
     },
     {
         path: 'login',
-        loadChildren: () => __webpack_require__.e(/*! import() | componentes-login-login-module */ "componentes-login-login-module").then(__webpack_require__.bind(null, /*! ./componentes/login/login.module */ "./src/app/componentes/login/login.module.ts")).then(m => m.LoginPageModule)
-    },
-    {
-        path: 'mantenimiento',
-        loadChildren: () => __webpack_require__.e(/*! import() | mantenimiento-mantenimiento-module */ "mantenimiento-mantenimiento-module").then(__webpack_require__.bind(null, /*! ./mantenimiento/mantenimiento.module */ "./src/app/mantenimiento/mantenimiento.module.ts")).then(m => m.MantenimientoPageModule)
-    },
-    {
-        path: 'mantenimiento',
-        loadChildren: () => __webpack_require__.e(/*! import() | mantenimiento-mantenimiento-module */ "mantenimiento-mantenimiento-module").then(__webpack_require__.bind(null, /*! ./mantenimiento/mantenimiento.module */ "./src/app/mantenimiento/mantenimiento.module.ts")).then(m => m.MantenimientoPageModule)
+        loadChildren: () => Promise.all(/*! import() | componentes-login-login-module */[__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("componentes-login-login-module")]).then(__webpack_require__.bind(null, /*! ./componentes/login/login.module */ "./src/app/componentes/login/login.module.ts")).then(m => m.LoginPageModule)
     },
     {
         path: 'correctivos',
-        loadChildren: () => __webpack_require__.e(/*! import() | componentes-correctivos-correctivos-module */ "componentes-correctivos-correctivos-module").then(__webpack_require__.bind(null, /*! ./componentes/correctivos/correctivos.module */ "./src/app/componentes/correctivos/correctivos.module.ts")).then(m => m.CorrectivosPageModule)
+        loadChildren: () => Promise.all(/*! import() | componentes-correctivos-correctivos-module */[__webpack_require__.e("default~componentes-correctivos-correctivos-module~componentes-nuevocorrectivo-nuevocorrectivo-module"), __webpack_require__.e("componentes-correctivos-correctivos-module")]).then(__webpack_require__.bind(null, /*! ./componentes/correctivos/correctivos.module */ "./src/app/componentes/correctivos/correctivos.module.ts")).then(m => m.CorrectivosPageModule)
     },
     {
         path: 'almacen',
@@ -500,7 +492,7 @@ const routes = [
     },
     {
         path: 'perfil',
-        loadChildren: () => __webpack_require__.e(/*! import() | componentes-perfil-perfil-module */ "componentes-perfil-perfil-module").then(__webpack_require__.bind(null, /*! ./componentes/perfil/perfil.module */ "./src/app/componentes/perfil/perfil.module.ts")).then(m => m.PerfilPageModule)
+        loadChildren: () => Promise.all(/*! import() | componentes-perfil-perfil-module */[__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("componentes-perfil-perfil-module")]).then(__webpack_require__.bind(null, /*! ./componentes/perfil/perfil.module */ "./src/app/componentes/perfil/perfil.module.ts")).then(m => m.PerfilPageModule)
     },
     {
         path: 'centrales',
@@ -524,11 +516,43 @@ const routes = [
     },
     {
         path: 'registro',
-        loadChildren: () => __webpack_require__.e(/*! import() | componentes-registro-registro-module */ "componentes-registro-registro-module").then(__webpack_require__.bind(null, /*! ./componentes/registro/registro.module */ "./src/app/componentes/registro/registro.module.ts")).then(m => m.RegistroPageModule)
+        loadChildren: () => Promise.all(/*! import() | componentes-registro-registro-module */[__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("componentes-registro-registro-module")]).then(__webpack_require__.bind(null, /*! ./componentes/registro/registro.module */ "./src/app/componentes/registro/registro.module.ts")).then(m => m.RegistroPageModule)
     },
     {
         path: 'recuperar',
-        loadChildren: () => __webpack_require__.e(/*! import() | componentes-recuperar-recuperar-module */ "componentes-recuperar-recuperar-module").then(__webpack_require__.bind(null, /*! ./componentes/recuperar/recuperar.module */ "./src/app/componentes/recuperar/recuperar.module.ts")).then(m => m.RecuperarPageModule)
+        loadChildren: () => Promise.all(/*! import() | componentes-recuperar-recuperar-module */[__webpack_require__.e("default~componentes-login-login-module~componentes-perfil-perfil-module~componentes-recuperar-recupe~854816c0"), __webpack_require__.e("componentes-recuperar-recuperar-module")]).then(__webpack_require__.bind(null, /*! ./componentes/recuperar/recuperar.module */ "./src/app/componentes/recuperar/recuperar.module.ts")).then(m => m.RecuperarPageModule)
+    },
+    {
+        path: 'actividad',
+        loadChildren: () => Promise.all(/*! import() | componentes-actividad-actividad-module */[__webpack_require__.e("common"), __webpack_require__.e("componentes-actividad-actividad-module")]).then(__webpack_require__.bind(null, /*! ./componentes/actividad/actividad.module */ "./src/app/componentes/actividad/actividad.module.ts")).then(m => m.ActividadPageModule)
+    },
+    {
+        path: 'crearactividad',
+        loadChildren: () => Promise.all(/*! import() | componentes-crearactividad-crearactividad-module */[__webpack_require__.e("common"), __webpack_require__.e("componentes-crearactividad-crearactividad-module")]).then(__webpack_require__.bind(null, /*! ./componentes/crearactividad/crearactividad.module */ "./src/app/componentes/crearactividad/crearactividad.module.ts")).then(m => m.CrearactividadPageModule)
+    },
+    {
+        path: 'mantenimiento',
+        loadChildren: () => __webpack_require__.e(/*! import() | componentes-mantenimiento-mantenimiento-module */ "componentes-mantenimiento-mantenimiento-module").then(__webpack_require__.bind(null, /*! ./componentes/mantenimiento/mantenimiento.module */ "./src/app/componentes/mantenimiento/mantenimiento.module.ts")).then(m => m.MantenimientoPageModule)
+    },
+    {
+        path: 'editaractividad',
+        loadChildren: () => Promise.all(/*! import() | componentes-editaractividad-editaractividad-module */[__webpack_require__.e("common"), __webpack_require__.e("componentes-editaractividad-editaractividad-module")]).then(__webpack_require__.bind(null, /*! ./componentes/editaractividad/editaractividad.module */ "./src/app/componentes/editaractividad/editaractividad.module.ts")).then(m => m.EditaractividadPageModule)
+    },
+    {
+        path: 'codigo',
+        loadChildren: () => __webpack_require__.e(/*! import() | componentes-confirmarcodigo-confirmarcodigo-module */ "componentes-confirmarcodigo-confirmarcodigo-module").then(__webpack_require__.bind(null, /*! ./componentes/confirmarcodigo/confirmarcodigo.module */ "./src/app/componentes/confirmarcodigo/confirmarcodigo.module.ts")).then(m => m.ConfirmarcodigoPageModule)
+    },
+    {
+        path: 'permisos',
+        loadChildren: () => __webpack_require__.e(/*! import() | componentes-permisos-permisos-module */ "componentes-permisos-permisos-module").then(__webpack_require__.bind(null, /*! ./componentes/permisos/permisos.module */ "./src/app/componentes/permisos/permisos.module.ts")).then(m => m.PermisosPageModule)
+    },
+    {
+        path: 'nuevocorrectivo',
+        loadChildren: () => Promise.all(/*! import() | componentes-nuevocorrectivo-nuevocorrectivo-module */[__webpack_require__.e("default~componentes-correctivos-correctivos-module~componentes-nuevocorrectivo-nuevocorrectivo-module"), __webpack_require__.e("componentes-nuevocorrectivo-nuevocorrectivo-module")]).then(__webpack_require__.bind(null, /*! ./componentes/nuevocorrectivo/nuevocorrectivo.module */ "./src/app/componentes/nuevocorrectivo/nuevocorrectivo.module.ts")).then(m => m.NuevocorrectivoPageModule)
+    },
+    {
+        path: 'fotos',
+        loadChildren: () => __webpack_require__.e(/*! import() | componentes-fotos-fotos-module */ "componentes-fotos-fotos-module").then(__webpack_require__.bind(null, /*! ./componentes/fotos/fotos.module */ "./src/app/componentes/fotos/fotos.module.ts")).then(m => m.FotosPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -575,9 +599,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_6__);
-
 
 
 
@@ -593,23 +614,6 @@ let AppComponent = class AppComponent {
         this.initializeApp();
     }
     redirectHome() {
-    }
-    cerrarSesion() {
-        console.log('sesion Cerrada');
-        sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
-            title: 'Estas Seguro?',
-            text: 'Estas apunto de cerrar tu sesion',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Cerrar'
-        }).then((result) => {
-            if (result.value) {
-                this.router.navigate(['login']);
-                sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire('Sesion Cerrada', 'Nos vemos pronto!', 'success');
-            }
-        });
     }
     initializeApp() {
         this.platform.ready().then(() => {
@@ -657,6 +661,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/camera/ngx */ "./node_modules/@ionic-native/camera/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/network/ngx */ "./node_modules/@ionic-native/network/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
+
+
 
 
 
@@ -674,11 +682,13 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"], _ionic_storage__WEBPACK_IMPORTED_MODULE_12__["IonicStorageModule"].forRoot()
+        ],
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
             _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_10__["Camera"],
+            _ionic_native_network_ngx__WEBPACK_IMPORTED_MODULE_11__["Network"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
@@ -714,7 +724,17 @@ const environment = {
         appId: '1:80149066201:web:f5e2abb3691fdf3891a9c8',
         measurementId: 'G-DK2ZX79DHV'
     },
-    urlApi: 'http://192.168.1.71:3000/api/'
+    urlApi: 'http://192.168.1.71:3000/api/',
+    user: {
+        name: '',
+        alias: '',
+        expediente: '',
+        telefono: '',
+        email: '',
+        area: '',
+        cm: ''
+    },
+    password: ''
 };
 /*
  * For easier debugging in development mode, you can import the following file

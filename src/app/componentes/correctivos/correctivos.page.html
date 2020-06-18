@@ -9,26 +9,19 @@
 </ion-header>
 
 <ion-content>
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="agregar()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
-    <!--
-    <form action="" enctype="multipart/form-data">
-        <ion-button (click)="hacerFoto()">Tomar Foto</ion-button>
-        <ion-img [src]="foto" *ngIf="foto"></ion-img>
-        <ion-input [(ngModel)]='informacionImagen' name="w"></ion-input>
-        <ion-button (click)="guardarFoto()">Guardar Foto</ion-button>
-        <ion-button (click)='obtenerImg()'>Mostrar Foto</ion-button>
-    </form>
-    <ion-img src="http://localhost:3000/imagenes/out.jpg"></ion-img>-->
+
     <ion-item>
-        <ion-label> Hallazgos</ion-label>
-        <select [(ngModel)]="empresa">
-          <optgroup >
-            <option ></option>
-            <option value="figza">FIGZA</option>
-            <option value="ctbr">CTBR</option>
-            
-          </optgroup>
-        </select>
+        <ion-label>Hallazgos</ion-label>
+        <ion-select [(ngModel)]="opcion">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
     </ion-item>
 
     <ion-searchbar></ion-searchbar>
@@ -36,15 +29,24 @@
 
     <ion-card (click)="r()">
         <ion-card-header>
-            <ion-card-subtitle style="color: red;">32</ion-card-subtitle>
-            <ion-card-subtitle>CTBR</ion-card-subtitle>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-card-subtitle>CTBR
+                            <ion-label color="danger">32</ion-label>
+                        </ion-card-subtitle>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
         </ion-card-header>
         <ion-card-content>
         </ion-card-content>
     </ion-card>
 
     <div *ngIf="mostrardiv">
-        <p style="color: gray;">CTBR
+        <p style="color: gray; float: left;">CTBR
+        </p>
+        <p style="color: red; float: right;">32
         </p>
         <ion-card class="interna">
             <ion-card-header>
@@ -53,10 +55,10 @@
                 </ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
-                <p style="float: left;">RRA_20-05-19/01</p>
+                <p style="float: left;">RRA-200519-0101</p>
                 <p style="float: right;">Parras</p>
-                <p style="float: left;">- Iluminacion y Electricidad</p>
-                <p style="float: right;">SCM</p>
+                <br>
+                <p style=" margin-left: 245px;">SCM</p>
 
 
             </ion-card-content>
@@ -66,14 +68,15 @@
             <ion-card-header>
                 <ion-card-subtitle style="color: rgb(255, 126, 5);">FORANEA
                     <ion-icon name="flame-outline" style="color: rgb(255, 5, 5); float: right;"></ion-icon>
+
                 </ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
-                <p style="float: left;">CVL_20-05-19/01</p>
+                <p style="float: left;">CVL-200519-0101</p>
                 <p style="float: right;">Calvillo</p>
-                <p style="float: left;">- Limpieza y Albañileria</p>
+                <br>
+                <p style=" margin-left: 245px;">SCM</p>
 
-                <p style="float: right;">SCM</p>
 
 
             </ion-card-content>

@@ -1,0 +1,25 @@
+<ion-header>
+
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button default-href="home"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Actividad</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar placeholder="Buscar actividad" (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-button class="NuevaActividad" color="success" (click)="crearActividad()" outline>Nueva actividad</ion-button>
+
+
+    <br><br> <br><br><br>
+
+    <ion-list>
+        <ion-card *ngFor="let actividad of servicioActividad.actividades">
+            <ion-card-header>
+                <ion-card-title (click)="editarActividad(actividad.nombre)">{{actividad.nombre}}</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+    </ion-list>
+</ion-content>
